@@ -1,0 +1,49 @@
+<h1>Facturas</h1>
+
+<form action="">
+    <table>
+        <tr>
+            <td>Codigo</td>
+            <td><input type="text" name="txtCodigo" [(ngModel)]="fac.codigo"></td>
+        </tr>
+        <tr>
+            <td>Numero</td>
+            <td><input type="text" name="txtNombre" [(ngModel)]="fac.numero"></td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td><input type="text" name="txtDNI" [(ngModel)]="fac.total"></td>
+        </tr>
+        <tr>
+            <td>Cliente</td>
+            <td><input type="text" name="txtCliente" [(ngModel)]="fac.cliente"></td>
+        </tr>
+        <tr>
+            <td>Detalle</td>
+            <td><input type="text" name="txtDetalle" [(ngModel)]="fac.detalle"></td>
+        </tr>
+    </table>
+    <button (click)="guardar()">Guardar</button>
+</form>
+
+<hr>
+
+
+
+<table>
+    <tr>
+        <th>Código</th>
+        <th>Numero</th>
+        <th>Cliente</th>
+        <th>Total</th>
+        
+    </tr>
+    <tr *ngFor="let fact of facturas | async">
+        <td>{{fact.codigo}}</td>
+        <td>{{fact.numero}}</td>
+        <td>{{fact.cliente.nombre}}</td>
+        <td>{{fact.total}}</td>
+        
+    </tr>
+
+</table>
